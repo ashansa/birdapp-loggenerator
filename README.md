@@ -9,5 +9,7 @@ How to run.
 
 2) If you need to have different values change bird ids or tower ids.
 
-3) you can have multiple lines of tower_id lines or bird_id lines
+3) you can have multiple lines of tower_id lines or bird_id lines.
+
+4) run LogGenerator.py and output will be written to bird-log
 
