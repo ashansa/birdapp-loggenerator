@@ -25,7 +25,7 @@ def read_input_files():
             if tmp_split_vals[0] == 'bird_ids':
                 bird_ids = tmp_split_vals[1].split(",")
 
-            input_file.close()
+        input_file.close()
 
         return no_of_lines, tower_ids, bird_ids
 
