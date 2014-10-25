@@ -1,3 +1,3 @@
-no_of_lines:100000
-tower_ids:tower1,tower2,tower3,tower-100,tower5
-bird_ids:bird-100,bird-103,bird-50
+no_of_lines:10000
+tower_ids:tower1,tower2,tower3,tower-0,tower5,tower6,tower7,tower8,tower9
+bird_ids:-1,0,bird-100,bird-103,bird-50,bird-21,bird-10,bird-40,bird-30

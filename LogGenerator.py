@@ -55,10 +55,23 @@ def generate_log():
     for x in xrange(0, int(no_of_lines)):
         randomDate = generate_random_date().split(" ");
         print("generating line no : ", x)
-        logfile.writelines(random.choice(tower_ids) + ', ' + randomDate[0] + ', ' + randomDate[1] + ', '
-                           + random.choice(bird_ids) + ', ' + str(random.randint(1, 6)) + ', ' + str(
+
+        bird_id = random.choice(bird_ids);
+
+        if(bird_id == '-1'):
+            logfile.writelines(random.choice(tower_ids) + ', ' + randomDate[0] + ', ' + randomDate[1] + ', '
+                               + bird_id + ', ' + '0' + ', ' + '0' + ', ' +
+                               str(random.randint(0, 3)) + "\n")
+        elif(bird_id == '0'):
+            logfile.writelines(random.choice(tower_ids) + ', ' + randomDate[0] + ', ' + randomDate[1] + ', '
+                               + bird_id + ', ' + str(random.randint(1, 6)) + ', ' + str(
+                random.randint(5, 200)) + ', ' +
+                               str(random.randint(0, 3)) + "\n")
+        else :
+            logfile.writelines(random.choice(tower_ids) + ', ' + randomDate[0] + ', ' + randomDate[1] + ', '
+                           + bird_id + ', ' + str(random.randint(1, 6)) + ', ' + str(
             random.randint(5, 200)) + ', ' +
-                           str(random.randint(0, 1)) + "\n");
+                           str(random.randint(0, 3)) + "\n")
 
     logfile.close()
 
