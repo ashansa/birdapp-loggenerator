@@ -26,7 +26,7 @@ def question2_output(input):
                 if (value['tower_id'] == tmp_split_vals[0]):
                     value['weight'] = int(value['weight']) + int(tmp_split_vals[4])
                     log_table[tmp_split_vals[1]] = value;
-    json.dump(log_table, open("q2-answer.json", "w+"))
+    json.dump(log_table, open("outputs/results/q2-answer.json", "w+"))
 
 
 def question1_output(input):
@@ -50,7 +50,7 @@ def question1_output(input):
                         value['wing_span'] = int(tmp_split_vals[5])
                         value['tower_id'] = (tmp_split_vals[0])
                     log_table[tmp_split_vals[1]] = value;
-    json.dump(log_table, open("q1-answer.json", "w+"))
+    json.dump(log_table, open("outputs/results/q1-answer.json", "w+"))
 
 
 def question3_output(input):
@@ -82,7 +82,7 @@ def question3_output(input):
                     if (current_date > new_date):
                         log_table[tmp_split_vals[3]] = tmp_split_vals[1]
 
-    json.dump(log_table, open("q3-answer.json", "w+"))
+    json.dump(log_table, open("outputs/results/q3-answer.json", "w+"))
 
 
 file_name = raw_input("Please enter your folder: ")
