@@ -51,7 +51,7 @@ def generate_log():
     Sintra-1, 2013-10-09, 17:54.01, eagle-25, 3, 120, 0.
     :return:
     """
-    logfile = open("bird-log", "w+");
+    logfile = open("outputs/logs/bird-log", "w+");
     for x in xrange(0, int(no_of_lines)):
         randomDate = generate_random_date().split(" ");
         print("generating line no : ", x)
