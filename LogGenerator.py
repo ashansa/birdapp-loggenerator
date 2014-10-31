@@ -38,7 +38,7 @@ def generate_random_date():
     format = '%Y-%m-%d %H:%M:%S'
 
     startTime = int(time.time())
-    endTime = time.mktime(time.strptime("2013-01-01 00:00:00", format))
+    endTime = time.mktime(time.strptime("2014-10-12 00:00:00", format))
 
     generatedTime = startTime + random.random() * (endTime - startTime)
 
