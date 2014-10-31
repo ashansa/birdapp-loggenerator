@@ -17,15 +17,14 @@ def question2_output(input):
                 line = line.strip()
                 tmp_split_vals = line.split(",")
 
+                key = tmp_split_vals[1].strip() + "@" + tmp_split_vals[0].strip()
+                if not (log_table.has_key(key)):
+                    log_table[key] = tmp_split_vals[4]
 
-            if not (log_table.has_key(tmp_split_vals[1])):
-                log_table[tmp_split_vals[1]] = {'tower_id': tmp_split_vals[0], 'weight': tmp_split_vals[4]}
+                else:
+                        log_table[key] =  int(log_table[key]) + int(tmp_split_vals [4])
 
-            else:
-                value = log_table[tmp_split_vals[1]]
-                if (value['tower_id'] == tmp_split_vals[0]):
-                    value['weight'] = int(value['weight']) + int(tmp_split_vals[4])
-                    log_table[tmp_split_vals[1]] = value;
+
     json.dump(log_table, open("q2-answer.json", "w+"))
 
 
@@ -41,15 +40,18 @@ def question1_output(input):
                 line = line.rstrip()
                 tmp_split_vals = line.split(",")
 
-                if not (log_table.has_key(tmp_split_vals[1])):
-                    log_table[tmp_split_vals[1]] = {'tower_id': tmp_split_vals[0], 'wing_span': tmp_split_vals[5]}
+                if(tmp_split_vals[6].strip() == "2"):
 
-                else:
-                    value = log_table[tmp_split_vals[1]]
-                    if (int(value['wing_span']) < int(tmp_split_vals[5])):
-                        value['wing_span'] = int(tmp_split_vals[5])
-                        value['tower_id'] = (tmp_split_vals[0])
-                    log_table[tmp_split_vals[1]] = value;
+                    if not (log_table.has_key(tmp_split_vals[1])):
+                        log_table[tmp_split_vals[1]] = {'tower_id': tmp_split_vals[0], 'wing_span': tmp_split_vals[5]}
+
+                    else:
+                        value = log_table[tmp_split_vals[1]]
+                        if (int(value['wing_span']) < int(tmp_split_vals[5])):
+                            value['wing_span'] = int(tmp_split_vals[5])
+                            value['tower_id'] = (tmp_split_vals[0])
+                        log_table[tmp_split_vals[1]] = value
+
     json.dump(log_table, open("q1-answer.json", "w+"))
 
 
@@ -79,7 +81,7 @@ def question3_output(input):
                     new_date_arr = str(tmp_split_vals[1]).split("-")
                     new_date = datetime.date(int(new_date_arr[0]), int(new_date_arr [1]), int(new_date_arr[2]))
 
-                    if (current_date > new_date):
+                    if (new_date > current_date):
                         log_table[tmp_split_vals[3]] = tmp_split_vals[1]
 
     json.dump(log_table, open("q3-answer.json", "w+"))
